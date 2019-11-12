@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if config['DEBUG'] %}
+  {% set ROOT = 'http://localhost:5000' %}
+{% else %}
+  {% set ROOT = config['PROJECT_URL'] %}
+{% endif %}
+
+
+{% set url = ROOT + url_for('main.index') + '?user=' + uuid %}
+
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <div class='col-md-6 col-xs-12'>
+      <h1>Way to go 🎉</h1>
+      <p>You're on the waitlist for Mega Duper App!</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row mt-3 justify-content-center">
+    <div class="col-md-4 p-2 m-2 rounded text-center" style="background-color: #B042F3;">
+      <div class='container'>
+        <h5 class="text-white">People ahead of you</h5>
+        <h3 class="text-white mb-0">{{ "{:,.0f}".format(waitlist_position) }}</h3>
+      </div>
+    </div>
+    <div class="col-md-4 p-2 m-2 rounded text-center" style=" background-color: #B042F3;">
+      <div class='container'>
+        <h5 class="text-white">Friends referred</h5>
+        <h3 class="text-white mb-0">{{ completed_referrals }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4 justify-content-center text-center">
+    <div class="col-md-6 col-xs-12">
+      <h5>Want to get ahead?</h5>
+      <p>Get bumped up the waitlist by referring your friends. The more friends you refer, the sooner you'll get access to the program.</p>
+    </div>
+  </div>
+
+  <div class="share-buttons row mt-3 justify-content-center">
+    <a class="fas fa-envelope" href="mailto:?subject=Trade like a pro&body=This is neat!%0A%0AGet Mega Duper App.%0A%0APlease sign up with my link: {{ url }}%26channel=email"></a>
+    <a class="fab fa-facebook-f" href="https://www.facebook.com/sharer.php?u={{ url }}%26channel=facebook"
+      data-share-url="https://www.facebook.com/sharer.php?u={{ url }}%26channel=facebook" onclick="javascript:window.open(this.getAttribute('data-share-url'), '_blank', 'width=800,height=500');return false;"></a>
+    <a class="fab fa-facebook-messenger" href="fb-messenger://share/?link={{ url }}%26channel=fb_messenger"
+      data-share-url="fb-messenger://share/?link={{ url }}%26channel=fb_messenger" onclick="javascript:window.open(this.getAttribute('data-share-url'), '_blank', 'width=800,height=500');return false;"></a>
+    <a class="fab fa-whatsapp" href="whatsapp://send?text=Get+Mega+Duper+App%3A+{{ url }}%26channel=whatsapp"
+      data-share-url="whatsapp://send?text=Get+Mega+Duper+App%3A+{{ url }}%26channel=whatsapp"
+      onclick="javascript:window.open(this.getAttribute('data-share-url'), '_blank', 'width=800,height=500');return false;"></a>
+    <a class="fab fa-twitter" href="https://twitter.com/intent/tweet?url={{ url }}%26channel=twitter&text=Get+Mega+Duper+App%3A&amp;source=webclient"
+      data-share-url="https://twitter.com/intent/tweet?url={{ url }}%26channel=twitter&text=Get+Mega+Duper+App%3A&amp;source=webclient"
+      onclick="javascript:window.open(this.getAttribute('data-share-url'), '_blank', 'width=800,height=500');return false;"></a>
+    <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&url={{ url }}%26channel=linkedin"
+      data-share-url="http://www.linkedin.com/shareArticle?mini=true&url={{ url }}%26channel=linkedin" onclick="javascript:window.open(this.getAttribute('data-share-url'), '_blank', 'width=800,height=500');return false;"></a>
+  </div>
+
+  <div class="row mt-3 justify-content-center text-center">
+    <div class="col-md-6 col-xs-12">
+      <p>Or share your unique link:</br>
+      {% if config['DEBUG'] %}
+        <a href="{{ url }}">{{ url }}</a></p>
+      {% else %}
+        <u>{{ url }}</u></p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+Hi there!
+
+We just need to verify you email so you can start using Mega Duper App! Click on the following link:
+
+{{ url_for('main.verify_email', token=token, _external=True) }}
+
+Thanks
+The Mega Duper App team

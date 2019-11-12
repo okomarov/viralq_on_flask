@@ -1,0 +1,23 @@
+# Cache
+__pycache__
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# OS
+.DS_Store
+
+# IDE
+*.vscode
+*.code-workspace
+
+# Settings
+.envrc
+
+# DB
+app.db

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center pt-2">
+    {% if referring_uuid %}
+    <form action="{{ url_for('main.index') + '?user=' + referring_uuid }}" method="post" class="form-inline">
+    {% else %}
+    <form action="{{ url_for('main.index') }}" method="post" class="form-inline">
+    {% endif %}
+      {{ form.hidden_tag() }}
+      <div class="form-group mx-sm-3 mb-2">
+        {{ form.email(class_='input',
+                      placeholder='Your best email…',
+                      pattern='(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)',
+                      required='required',
+                      oninvalid="this.setCustomValidity('Please enter a valid email address.')",
+                      onchange="try{setCustomValidity('')}catch(e){}") }}
+      </div>
+      {{ form.submit(class_='btn btn-primary mb-2') }}
+    </form>
+  </div>
+</div>
+{% endblock %}

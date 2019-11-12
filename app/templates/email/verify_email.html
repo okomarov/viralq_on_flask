@@ -1,0 +1,7 @@
+<p>Hi there!</p>
+<p>We just need to verify you email so you can start using Mega Duper App! </p>
+<p><a href="{{ url_for('main.verify_email', token=token, _external=True) }}"> That's me! </a></p>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('main.verify_email', token=token, _external=True) }}</p>
+<p>Thanks</p>
+<p>The Mega Duper App Team</p>

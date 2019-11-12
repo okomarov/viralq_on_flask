@@ -1,0 +1,42 @@
+.share-buttons .fab,.share-buttons .fas{
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 20%;
+  color: white;
+}
+.share-buttons .fab:hover,.share-buttons .fas:hover{
+    -webkit-filter: brightness(70%);
+    filter: brightness(70%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color:white;
+}
+.share-buttons .fa-facebook-f {
+  background: #3B5998;
+}
+.share-buttons .fa-facebook-messenger {
+  background: #0084ff;
+}
+.share-buttons .fa-twitter {
+  background: #55ACEE;
+}
+.share-buttons .fa-whatsapp {
+  background: #25D366;
+}
+.share-buttons .fa-google {
+  background: #dd4b39;
+}
+.share-buttons .fa-linkedin-in {
+  background: #007bb5;
+}
+.share-buttons .fa-envelope {
+  background: #444444;
+}
