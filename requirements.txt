@@ -11,12 +11,14 @@ Flask-Mail==0.9.1
 Flask-Migrate==2.5.2
 Flask-SQLAlchemy==2.4.1
 Flask-WTF==0.14.2
+gunicorn==20.0.0
 isort==4.3.21
 itsdangerous==1.1.0
 Jinja2==2.10.3
 Mako==1.1.0
 MarkupSafe==1.1.1
 mccabe==0.6.1
+psycopg2==2.8.4
 pycodestyle==2.5.0
 pycparser==2.19
 pyflakes==2.1.1

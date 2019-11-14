@@ -1,0 +1,53 @@
+{
+    "name": "Viral Queue in Flask",
+    "description": "Waitlist template for your startup idea",
+    "keywords": [
+      "python",
+      "heroku",
+      "waitlist",
+      "queue",
+      "marketing",
+      "viral"
+    ],
+    "repository": "https://github.com/okomarov/viralq_on_flask",
+    "success_url": "/",
+    "env": {
+      "SECRET_KEY": {
+        "description": "A secret key for your Flask app",
+        "generator": "secret"
+      },
+      "MAIL_PORT": {
+        "description": "Port to your email service",
+        "value": "***"
+      },
+      "MAIL_SERVER": {
+        "description": "Server name of your email service",
+        "value": "***"
+      },
+      "MAIL_USERNAME": {
+        "description": "Username for your email service",
+        "value": "***"
+      },
+      "MAIL_PASSWORD": {
+        "description": "Password for your email service",
+        "value": "***"
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "addons": [
+      {
+          "plan": "heroku-postgresql:hobby-dev"
+      }
+    ],
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }
+  
