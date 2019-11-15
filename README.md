@@ -6,7 +6,7 @@ For details and how to use, please read: [Build your own viral queue in Flask](h
 ## Deploy on Heroku (free)
 First, edit the `app.json` and replace the value of the `repository`:
 ```
-"repository": "https://github.com/okomarov/dash_on_flask"
+"repository": "https://github.com/okomarov/viralq_on_flask"
 ```
 with the URL to the forked repository.
 
