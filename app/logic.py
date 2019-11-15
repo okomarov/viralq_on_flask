@@ -64,7 +64,8 @@ def refer(referring_uuid, referred_uuid):
 def get_waitlist_position(uuid):
     waitlist_user = get_waitlist_user(uuid)
     score = waitlist_user.score
-    return Waitlist.query.filter(Waitlist.score <= score).count()
+    users_ahead = Waitlist.query.filter(Waitlist.score <= score).count()
+    return max(score, users_ahead)
 
 
 def get_completed_referrals(uuid):
