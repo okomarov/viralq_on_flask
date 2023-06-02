@@ -3,7 +3,7 @@ asn1crypto==1.1.0
 blinker==1.4
 cffi==1.13.0
 Click==7.0
-cryptography==39.0.1
+cryptography==41.0.0
 entrypoints==0.3
 flake8==3.7.8
 Flask==1.1.1
